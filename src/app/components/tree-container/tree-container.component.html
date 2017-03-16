@@ -1,0 +1,12 @@
+<div class="tree-container">
+  Current builder type: {{builderType}}
+  <button (click)="toggleBuilder()">Toggle builder!</button>
+
+  <div *ngFor="let node of nodesArray, let i = index" [ngStyle]="{marginLeft: node.indentation*10 + 'px'}" class="node-container">
+    <div class="node-name">- {{node.value}}</div>
+    <form (ngSubmit)="addNode(nodeForm, node, i)" #nodeForm="ngForm">
+      <input ngModel name="nodeName">
+      <button type="submit">Add child</button>
+    </form>
+  </div>
+</div>
