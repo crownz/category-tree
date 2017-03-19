@@ -142,7 +142,7 @@ describe('TreeContainerComponent', () => {
 
     //then
     expect(component.serviceType).toEqual(TYPE_ITERATIVE);
-    expect(component.currentTreeService).toBe(component.allTreeServices[1]);
+    expect(component.currentTreeService).toBe(component.allTreeServices[0]);
   });
 
   it('toggleBuilder should switch to recursive service', () => {
@@ -154,6 +154,6 @@ describe('TreeContainerComponent', () => {
 
     //then
     expect(component.serviceType).toEqual(TYPE_RECURSIVE);
-    expect(component.currentTreeService).toBe(component.allTreeServices[0]);
+    expect(component.currentTreeService).toBe(component.allTreeServices[1]);
   });
 });

@@ -51,7 +51,7 @@ export class TreeContainerComponent implements OnInit {
   constructor(private treeServices: TreeCategoryService, public dialog: MdDialog) {
     this.serviceType = TYPE_RECURSIVE;
     this.allTreeServices = treeServices;
-    this.currentTreeService = treeServices[0];
+    this.currentTreeService = treeServices[1];
   }
 
   ngOnInit() {
@@ -94,10 +94,10 @@ export class TreeContainerComponent implements OnInit {
   toggleBuilder() {
     if (this.currentTreeService instanceof TreeCategoryRecursiveService) {
       this.serviceType = TYPE_ITERATIVE;
-      this.currentTreeService = this.allTreeServices[1];
+      this.currentTreeService = this.allTreeServices[0];
     } else if (this.currentTreeService instanceof TreeCategoryIterativeService) {
       this.serviceType = TYPE_RECURSIVE;
-      this.currentTreeService = this.allTreeServices[0];
+      this.currentTreeService = this.allTreeServices[1];
     }
   }
 

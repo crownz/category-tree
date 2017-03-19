@@ -4,7 +4,7 @@ import { Node } from '../../models/node.model';
 @Component({
   selector: 'tree-node',
   templateUrl: './tree-node.component.html',
-  styleUrls: ['./tree-node.component.css']
+  styleUrls: ['tree-node.component.less']
 })
 export class TreeNodeComponent implements OnInit {
 
