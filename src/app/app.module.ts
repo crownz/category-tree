@@ -9,17 +9,21 @@ import { TreeNodeComponent } from './components/tree-node/tree-node.component';
 import {TreeCategoryRecursiveService} from "./services/tree-category-recursive.service";
 import {TreeCategoryIterativeService} from "./services/tree-category-iterative.service";
 import {TreeCategoryService} from "./services/tree-category.service";
+import {MaterialModule} from "@angular/material";
+import { NewNodeDialog } from './dialogs/new-node/new-node.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TreeContainerComponent,
-    TreeNodeComponent
+    TreeNodeComponent,
+    NewNodeDialog
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule
   ],
   providers: [
     {
@@ -32,6 +36,9 @@ import {TreeCategoryService} from "./services/tree-category.service";
       useValue: new TreeCategoryIterativeService(),
       multi: true
     }
+  ],
+  entryComponents: [
+    NewNodeDialog
   ],
   bootstrap: [AppComponent]
 })

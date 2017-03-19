@@ -1,0 +1,12 @@
+<div class="dialog-container">
+  <form #nodeForm="ngForm" class="form-container">
+    <md-input-container dividerColor="primary">
+      <input mdInput [(ngModel)]="nodeName" placeholder="Node name" required name="nodeName">
+    </md-input-container>
+    <div class="buttons-container">
+      <div class="filler"></div>
+      <button md-raised-button (click)="dialogRef.close()" class="cancel-button">CANCEL</button>
+      <button md-raised-button (click)="dialogRef.close(nodeName)" class="add-button" color="primary" [disabled]="!nodeForm.valid">ADD NODE</button>
+    </div>
+  </form>
+</div>

@@ -1,12 +1,18 @@
 <div class="tree-container">
-  Current builder type: {{builderType}}
-  <button (click)="toggleBuilder()">Toggle builder!</button>
-
-  <div *ngFor="let node of nodesArray, let i = index" [ngStyle]="{marginLeft: node.indentation*10 + 'px'}" class="node-container">
-    <div class="node-name">- {{node.value}}</div>
-    <form (ngSubmit)="addNode(nodeForm, node, i)" #nodeForm="ngForm">
-      <input ngModel name="nodeName">
-      <button type="submit">Add child</button>
-    </form>
+  <div class="builder-type-title">
+    Current builder type: {{builderType}}
   </div>
+  <div class="buttons-line">
+    <button md-raised-button color="warn" (click)="toggleBuilder()" class="general-button">Toggle builder!</button>
+    <button md-raised-button color="primary" (click)="generateStartingTree()" class="general-button">Generate tree!</button>
+    <button md-raised-button color="primary" (click)="addNewNode()" class="general-button">Start new tree!</button>
+  </div>
+
+  <div class="nodes-container">
+    <div *ngFor="let node of nodesArray, let i = index" [ngStyle]="{marginLeft: node.level * 30 + 'px'}" class="node-container">
+      <div class="node-name">- {{node.value}}</div>
+      <button md-icon-button (click)="addNewNode(node)" mdTooltip="Add child!"><md-icon>add</md-icon></button>
+    </div>
+  </div>
+
 </div>
