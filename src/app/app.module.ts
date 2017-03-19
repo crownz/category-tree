@@ -6,8 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TreeContainerComponent } from './components/tree-container/tree-container.component';
 import { TreeNodeComponent } from './components/tree-node/tree-node.component';
-import {TreeCategoryRecursiveService} from "./services/tree-category-recursive.service";
-import {TreeCategoryIterativeService} from "./services/tree-category-iterative.service";
+import recursiveServiceFactory from "./services/tree-category-recursive.service";
+import iterativeServiceFactory from "./services/tree-category-iterative.service";
 import {TreeCategoryService} from "./services/tree-category.service";
 import {MaterialModule} from "@angular/material";
 import { NewNodeDialog } from './dialogs/new-node/new-node.component';
@@ -28,12 +28,12 @@ import { NewNodeDialog } from './dialogs/new-node/new-node.component';
   providers: [
     {
       provide: TreeCategoryService,
-      useValue: new TreeCategoryRecursiveService(),
+      useFactory: iterativeServiceFactory,
       multi: true
     },
     {
       provide: TreeCategoryService,
-      useValue: new TreeCategoryIterativeService(),
+      useFactory: recursiveServiceFactory,
       multi: true
     }
   ],

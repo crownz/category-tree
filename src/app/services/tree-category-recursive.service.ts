@@ -3,6 +3,10 @@ import {TreeCategoryService} from "./tree-category.service";
 
 export class TreeCategoryRecursiveService extends TreeCategoryService {
 
+  constructor() {
+    super();
+  }
+
   /**
    * Creates array of tree nodes in recursive way
    * in order which nodes will be printed out
@@ -23,3 +27,7 @@ export class TreeCategoryRecursiveService extends TreeCategoryService {
   }
 
 }
+/**
+ * Exporting factory.
+ */
+export default () => new TreeCategoryRecursiveService();

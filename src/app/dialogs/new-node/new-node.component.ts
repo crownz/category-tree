@@ -8,6 +8,8 @@ import {MdDialogRef} from "@angular/material";
 })
 export class NewNodeDialog implements OnInit {
 
+  nodeName: string = '';
+
   constructor(public dialogRef: MdDialogRef<NewNodeDialog>) { }
 
   ngOnInit() {

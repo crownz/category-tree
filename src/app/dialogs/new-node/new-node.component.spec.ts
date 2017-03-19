@@ -18,8 +18,4 @@ describe('NewNodeComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

@@ -8,5 +8,4 @@ import {Component, ViewEncapsulation} from '@angular/core';
   '../../node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css']
 })
 export class AppComponent {
-  title = 'app works!';
 }
